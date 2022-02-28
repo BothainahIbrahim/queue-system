@@ -1,0 +1,81 @@
+html
+{ 
+
+	font-size: 20px;
+	font-family:Monospace, TraditionalArabic;
+	/* background-image: linear-gradient(lightgray, skyblue); */
+	background-repeat: repeat-x;
+	direction:rtl;
+	text-align:center;
+	color:white;
+	background-image: url("https://images.squarespace-cdn.com/content/v1/5372e4d2e4b0fca9449770f9/1553141168373-G98ICOW1KUMZQSGAAIDN/ke17ZwdGBToddI8pDm48kOq3XtvT-rTx5PTvQrwH2CZZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyBi6H8XuGgiOTkZYjvHnSOANLZGVcHi3tbrkKAT-GPtysHBglV01zzuz87anpmrvo/diana-toledano_winter-forest-pattern.png?format=750w"),
+	radial-gradient(#444,#111);
+	background-blend-mode:multiply;
+	
+}
+.titleST
+{
+	font-size:24px;
+}
+
+.printname
+{
+	text-align:center;
+	width:50%;
+	direction:center;
+	margin-left:100px;
+	margin-right:250px;
+	padding-top:12px;
+}
+
+.marginTop
+{
+	
+	text-decoration: overline;
+	font-size:11px;
+	margin-top:20px;
+	
+}
+
+tr{transition:all .25s ease-in-out;}
+tr:hover{background-color:#444;cursor: pointer}
+
+input {
+	
+	width: 30%;
+	direction:center;
+	padding: 12px 20px;
+	margin: 8px;
+	border-radius:5px;
+	box-sizing: border-box;
+}
+
+
+.footer 
+{
+	text-decoration: overline;
+	font-size:11px;
+	margin-top:15%;
+}
+
+.buttonde
+{
+	background-color: #001120; /* Green */
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	width: 30%;
+	direction:center;
+	padding: 12px 20px;
+	margin: 8px 0;
+	font-weight: bold;
+	border-radius:5px;
+	box-sizing: border-box;
+	box-shadow:0 2px 2px -2px #fff;	
+}
+
+

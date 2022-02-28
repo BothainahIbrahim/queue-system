@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<div class="marginTop">
+	<html lang="ar">
+		<head>
+			<title>طابور الأسماء</title>
+			<meta charset="utf-8">
+			<meta name="keywords" content="قائمة أسماء ، ترتيب الأسماء">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="description" content="إدخال أسماء الأشخاص بالدور">
+			<meta name="author" content="Bothainah Ibrahim">
+			<link rel="stylesheet" href="./css/css.css">
+			
+		</head>
+	</div>
+    <body>
+        
+		<div class="into_page">
+			
+			<h5 class="titleST">أسماء الحضور:</h5>
+			<p name = "printName" >
+
+				هذا الموقع يساعد الأشخاص في حفظ حقوقهم بالدور بدلا من الانتظار بالدور
+			</p>
+			
+			
+			<table id="table" style="text-align:center;" class="printname">
+				<tr class="printname"></tr>
+			</table>
+			
+			<div class="printname">
+				<br></br>
+				
+				<p class="titleST">الأسماء بالدور:</p>
+				<input type="text" name="fname" id="fname" class="printname" onfocus=this.value='' required/>
+			</div>
+		</div>
+		<br>
+		
+		<button onclick="addHtmlTableRow();"class="buttonde" id = "butAdd" name="butAdd">إضافة</button>
+		<button onclick="removeSelectedRow();"class="buttonde">حذف</button>
+		
+        <script>
+            
+			var input = document.getElementById("fname");
+					input.addEventListener("keyup", function(event) {
+						if (event.keyCode === 13) {
+							event.preventDefault();
+							document.getElementById("butAdd").click();
+						}
+					});
+			
+            var rIndex,
+			table = document.getElementById("table");
+            
+            // check the empty input
+            function checkEmptyInput()
+            {
+                var isEmpty = false,
+				fname = document.getElementById("fname").value;
+				
+                if(fname === ""){
+                    alert("يجب إدخال اسم على الأقل");
+                    isEmpty = true;
+				}
+                return isEmpty;
+			}
+            
+            // add Row
+            function addHtmlTableRow()
+            {
+                // get the table by id
+                // create a new row and cells
+                // get value from input text
+                // set the values into row cell's
+				
+				
+                if(!checkEmptyInput())
+				{
+					
+					var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+					
+                    fname = document.getElementById("fname").value;
+					
+					cell1.innerHTML = fname;
+					
+					// call the function to set the event to the new row
+					selectedRowToInput();
+				}
+				
+				//to make the input balnk :)
+				
+				document.getElementById("fname").value = "";
+			}
+            
+            // display selected row data into input text
+            function selectedRowToInput()
+            {
+			
+                for(var i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+						// get the seected row index
+						rIndex = this.rowIndex;
+						document.getElementById("fname").value = this.cells[0].innerHTML;		
+					};
+				}
+			}
+			
+            selectedRowToInput();
+            
+            function editHtmlTbleSelectedRow()
+            {
+                var fname = document.getElementById("fname").value;
+				
+				
+				if(!checkEmptyInput()){
+					table.rows[rIndex].cells[0].innerHTML = fname;
+				}
+			}
+            
+            function removeSelectedRow()
+            {
+				
+                table.deleteRow(rIndex);
+                // clear input text
+				document.getElementById("fname").value = "";
+				
+				
+			}
+			
+			
+		</script>
+			
+		</body>
+		
+		
+		<footer>
+			<div class="footer">
+				<p>developing by BothainahIbrahim</p>
+			</div>
+		</footer>
+	</html>			
